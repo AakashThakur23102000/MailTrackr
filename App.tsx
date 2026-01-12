@@ -5,6 +5,8 @@ import { setThemeMode } from './src/store/themeSlice';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScaledSheet } from 'react-native-size-matters';
 import CustomText from './src/components/CustomText';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigation from './src/navigations/BottomTabNavigation';
 
 const App = () => {
 
@@ -34,9 +36,9 @@ const App = () => {
         backgroundColor={COLORS.statusBarAndSafeAreaView}
         barStyle={themeMode === "dark" ? "light-content" : "dark-content"}
       />
-      <SafeAreaView style={styles.statusBarAndSafeAreaView}>
-        <CustomText>App</CustomText>
-      </SafeAreaView>
+      <NavigationContainer>
+        <BottomTabNavigation />
+      </NavigationContainer>
     </>
   )
 }

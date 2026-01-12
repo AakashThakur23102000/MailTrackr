@@ -7,58 +7,59 @@ export type ThemeColorsType = {
     statusBarAndSafeAreaView: string,
     background1: string;
 
-    cardColor: string;
+    primary100: string;
+    primary500: string;
+    primary1000: string;
 
-    btnColor: string;
-    btnText: string;
+    secondary100: string;
+    secondary500: string;
+    secondary1000: string;
+
+
+    cardColor: string;
 
     textColor: string;
     textColor2: string;
     placeholderColor: string;
 
-    inputField: string;
-    inputBorderDefault: string;
-    inputBorderFocused: string;
-    inputBorderError: string
 };
 
 const lightThemeColors: ThemeColorsType = {
-    statusBarAndSafeAreaView: "#f8f8fa",
-    background1: '#f8f8fa',
+    statusBarAndSafeAreaView: "#f9faef",
+    background1: '#f9faef',
 
-    cardColor: "#ffffff",
+    primary100: "#cdeda3",
+    primary500: "#4c662b",
+    primary1000: "#354e16",
 
-    btnColor: "#1c84ee",
-    btnText: "white",
+    secondary100: "#dce7c8",
+    secondary500: "#586249",
+    secondary1000: "#404a33",
 
-    textColor: "#5d7186",
-    textColor2: "#313b5e",
-    placeholderColor: "#9caab7",
+    cardColor: "#eeefe3",
 
-
-    inputField: "#f8f8fa",
-    inputBorderDefault: "#d8dfe7",
-    inputBorderFocused: "#b0b0bb",
-    inputBorderError: "#ef5f5f"
+    textColor: "#1a1c16",
+    textColor2: "#44483d",
+    placeholderColor: "#414941",
 };
 
 const darkThemeColors: ThemeColorsType = {
-    statusBarAndSafeAreaView: "#22282e",
-    background1: '#22282e',
+    statusBarAndSafeAreaView: "#12140e",
+    background1: '#12140e',
 
-    cardColor: "#282f36",
+    cardColor: "#1e201a",
 
-    btnColor: "#1c84ee",
-    btnText: "black",
+    textColor: "#e2e3d8",
+    textColor2: "#c5c8ba",
+    placeholderColor: "#C1C9BF",
 
-    textColor: "#aab8c5",
-    textColor2: "#313b5e",
-    placeholderColor: "#7b8896",
+    primary100: "#354e16",
+    primary500: "#b1d18a",
+    primary1000: "#cdeda3",
 
-    inputField: "#22282e",
-    inputBorderDefault: "#3a4551",
-    inputBorderFocused: "#4a5663",
-    inputBorderError: "rgb(245.4, 159, 159)"
+    secondary100: "#404a33",
+    secondary500: "#bfcbad",
+    secondary1000: "#dce7c8",
 };
 
 const systemModeFromDevice = () =>
@@ -138,34 +139,3 @@ export const ThemeSlice = createSlice({
 
 export const { setThemeMode, setCustomColors, resetCustomColors } = ThemeSlice.actions;
 export default ThemeSlice.reducer;
-
-
-
-
-
-
-// // Read colors anywhere:
-// const colors = useSelector((s: RootState) => s.theme.colors);
-
-// // Switch modes (system-aware):
-// dispatch(setThemeMode('systemDark'));   // or 'systemLight'
-// dispatch(setThemeMode('dark'));
-// dispatch(setThemeMode('light'));
-
-// // Override just primary (both modes or specific mode):
-// dispatch(setCustomColors({ overrides: { primary100: '#ED8936' } }));             // both
-// dispatch(setCustomColors({ overrides: { primary100: '#F6AD55' }, target: 'dark' })); // dark only
-
-// // Reset overrides:
-// dispatch(resetCustomColors()); // both
-// dispatch(resetCustomColors({ target: 'dark' }));
-
-
-
-//   useEffect(() => {
-//     const sub = Appearance.addChangeListener(({ colorScheme }) => {
-//       if (!isSystemModeEnabled) return;
-//       dispatch(setThemeMode(colorScheme === 'dark' ? 'systemDark' : 'systemLight'));
-//     });
-//     return () => sub.remove();
-//   }, [dispatch, isSystemModeEnabled]);
