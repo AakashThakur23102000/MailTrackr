@@ -36,9 +36,11 @@ const App = () => {
         backgroundColor={COLORS.statusBarAndSafeAreaView}
         barStyle={themeMode === "dark" ? "light-content" : "dark-content"}
       />
-      <NavigationContainer>
-        <BottomTabNavigation />
-      </NavigationContainer>
+      <SafeAreaView style={styles.statusBarAndSafeAreaView}>
+        <NavigationContainer>
+          <BottomTabNavigation />
+        </NavigationContainer>
+      </SafeAreaView>
     </>
   )
 }

@@ -7,6 +7,7 @@ import ProfileScreen from '../pages/profile/ProfileScreen';
 import { QueryClientProvider } from '@tanstack/react-query';
 import GlobalQueryClient from '../utils/globalQueryClient';
 import { useNavigation } from '@react-navigation/native';
+import CustomBottomTabBar from './CustomBottomTabBar';
 
 const BottomTabNavigation = () => {
     const Tab = createBottomTabNavigator();
@@ -14,7 +15,11 @@ const BottomTabNavigation = () => {
     const queryClient = GlobalQueryClient({ navigation });
     return (
         <QueryClientProvider client={queryClient}>
-            <Tab.Navigator initialRouteName={NavigationPaths.RECORDS_SCREEN}>
+            <Tab.Navigator
+                initialRouteName={NavigationPaths.RECORDS_SCREEN}
+                screenOptions={{ headerShown: false }}
+                tabBar={(props) => <CustomBottomTabBar {...props} />}
+            >
                 <Tab.Screen name={NavigationPaths.RECORDS_SCREEN} component={RecordsScreen} />
                 <Tab.Screen name={NavigationPaths.MAIL_TEMPLATES_SCREEN} component={MailTemplateScreen} />
                 <Tab.Screen name={NavigationPaths.PROFILE_SCREEN} component={ProfileScreen} />

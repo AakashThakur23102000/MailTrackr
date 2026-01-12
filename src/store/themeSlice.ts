@@ -5,6 +5,8 @@ export type ThemeModeType = 'light' | 'dark' | 'systemLight' | 'systemDark';
 
 export type ThemeColorsType = {
     statusBarAndSafeAreaView: string,
+    bottomTabColor: string
+
     background1: string;
 
     primary100: string;
@@ -25,6 +27,7 @@ export type ThemeColorsType = {
 };
 
 const lightThemeColors: ThemeColorsType = {
+    bottomTabColor: '#f9faef',
     statusBarAndSafeAreaView: "#f9faef",
     background1: '#f9faef',
 
@@ -44,6 +47,8 @@ const lightThemeColors: ThemeColorsType = {
 };
 
 const darkThemeColors: ThemeColorsType = {
+    bottomTabColor: '#12140e',
+
     statusBarAndSafeAreaView: "#12140e",
     background1: '#12140e',
 
