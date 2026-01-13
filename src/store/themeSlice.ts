@@ -21,7 +21,7 @@ export type ThemeColorsType = {
     cardColor: string;
 
     textColor: string;
-    textColor2: string;
+    textColorNegative: string;
     placeholderColor: string;
 
 };
@@ -42,7 +42,7 @@ const lightThemeColors: ThemeColorsType = {
     cardColor: "#eeefe3",
 
     textColor: "#1a1c16",
-    textColor2: "#44483d",
+    textColorNegative: "#e2e3d8",
     placeholderColor: "#414941",
 };
 
@@ -55,7 +55,7 @@ const darkThemeColors: ThemeColorsType = {
     cardColor: "#1e201a",
 
     textColor: "#e2e3d8",
-    textColor2: "#c5c8ba",
+    textColorNegative: "#1a1c16",
     placeholderColor: "#C1C9BF",
 
     primary100: "#354e16",
