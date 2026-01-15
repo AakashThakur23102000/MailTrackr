@@ -7,6 +7,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 import CustomText from './src/components/CustomText';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigation from './src/navigations/BottomTabNavigation';
+import AppStackNavigation from './src/navigations/AppStackNavigation';
 
 const App = () => {
 
@@ -38,7 +39,7 @@ const App = () => {
       />
       <SafeAreaView style={styles.statusBarAndSafeAreaView}>
         <NavigationContainer>
-          <BottomTabNavigation />
+          <AppStackNavigation />
         </NavigationContainer>
       </SafeAreaView>
     </>

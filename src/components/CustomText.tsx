@@ -60,7 +60,7 @@ const CustomText: React.FC<CustomTextProps> = ({
 }) => {
     const fontFamily = customFamily !== "default" ? getFontFamily(customFamily, customWeight) : undefined;
     const fontWeight = customFamily === 'default' ? customWeight : undefined;
-    var fontSize = fontSizes[customSize] || fontSizes.regular;
+    let fontSize = fontSizes[customSize] || fontSizes.regular;
     const COLORS = useAppSelector(state => state.theme.colors)
     const styles = StyleSheet.create({
         text: {

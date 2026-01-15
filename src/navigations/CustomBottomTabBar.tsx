@@ -80,7 +80,10 @@ const CustomBottomTabBar = ({
                         }}
                         onPress={() => {
                             if (!isFocused) {
-                                navigation.navigate(item.routeName as never);
+                                navigation.navigate(
+                                    NavigationPaths.BOTTOM_TAB_NAVIGATION, {
+                                    screen: item.routeName
+                                });
                             }
                         }}
                     >

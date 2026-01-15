@@ -6,8 +6,11 @@ import CustomHeader from '../../components/CustomHeader';
 import CustomButton from '../../components/CustomButton';
 import { Config } from '../../config/Config';
 import CardWithButtons1 from '../../components/CardWithButtons1';
+import { useNavigation } from '@react-navigation/native';
+import { NavigationPaths } from '../../config/NavigationPaths';
 
 const MailTemplateScreen = () => {
+    const navigation = useNavigation<any>()
     const COLORS = useAppSelector((state) => state.theme.colors);
     const styles = ScaledSheet.create({
         screen: {
@@ -35,6 +38,14 @@ const MailTemplateScreen = () => {
                         style={{
                             width: scale(200)
                         }}
+                        onPress={() => {
+                            navigation.navigate(
+                                NavigationPaths.ADD_EDIT_MAIL_TEMPLATES_SCREEN,
+                                {
+                                    params: { mode: 'Add' }
+                                }
+                            )
+                        }}
                     >+ Add Email Template</CustomButton>
                 </View>
                 <View style={styles.cardsRow}>
@@ -43,7 +54,14 @@ const MailTemplateScreen = () => {
                         childLabel='Subject: Welcome to Company'
                         icon1Name='circle-edit-outline'
                         icon2Name='delete-circle-outline'
-                        icon1OnPress={() => { }}
+                        icon1OnPress={() => {
+                            navigation.navigate(
+                                NavigationPaths.ADD_EDIT_MAIL_TEMPLATES_SCREEN,
+                                {
+                                    params: { mode: 'Edit' }
+                                }
+                            )
+                        }}
                         icon2OnPress={() => { }}
                     />
                     <CardWithButtons1

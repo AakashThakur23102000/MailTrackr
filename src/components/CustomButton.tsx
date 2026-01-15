@@ -3,7 +3,6 @@ import { Button, type ButtonProps } from "react-native-paper";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import { useAppSelector } from "../hooks/storeHooks";
 import { fontSizes } from "./CustomText";
-import { hexToRgba } from "../utils/hexToRgba";
 
 type Props = ButtonProps & {
     children: React.ReactNode;

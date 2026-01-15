@@ -39,7 +39,7 @@ const lightThemeColors: ThemeColorsType = {
     secondary500: "#586249",
     secondary1000: "#404a33",
 
-    cardColor: "#eeefe3",
+    cardColor: "#a9b49c",
 
     textColor: "#1a1c16",
     textColorNegative: "#e2e3d8",
@@ -52,7 +52,7 @@ const darkThemeColors: ThemeColorsType = {
     statusBarAndSafeAreaView: "#12140e",
     background1: '#12140e',
 
-    cardColor: "#1e201a",
+    cardColor: "#434e36",
 
     textColor: "#e2e3d8",
     textColorNegative: "#1a1c16",
